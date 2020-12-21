@@ -1,4 +1,6 @@
-# Esse jogo foi desenvolvido como forma de exercício com base no código do Canal Código fonte. Nome dos desenvolvedores, links e exemplos estão listados abaixo
+# Esse jogo foi desenvolvido como forma de exercício com base no código do Canal Código fonte. Nome dos desenvolvedores, links e exemplos estão listados abaixo. 
+
+# O que aprendi: Programar em javascript puro é um experiência diferente de programar em uma lib como React, pois parece ser mais manual e trabalhoso que o react e, sem o devido cuidado, é tornar a organização de pastas e documentos uma bagunça.
 
 # Mini-Game Start Reactor do Among Us usando Vanilla JS
 

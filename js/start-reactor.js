@@ -39,7 +39,7 @@ startReactor = {
     computerLedPanel: document.querySelector(".computerLedPanel"),
     playerLedPanel: document.querySelector(".playerLedPanel"),
     playerMemory: document.querySelector(".playerMemory"),
-    playerMemoryButtons: document.querySelector(".player_memory"),
+    playerMemoryButtons: document.querySelector("player_memory"),
 
     turnLedOn(index, ledPanel)  {
       ledPanel.children[index].classList.add("ledOn");
@@ -174,8 +174,8 @@ startReactor = {
 
     let newCombination = []
     for (let n = 0; n < startReactor.combinationMaxPosition; n++) {
-      const postition = Math.floor((Math.random * startReactor.memoryMaxCombination) + 1)
-      newCombination.push(postition-1)
+      const position = Math.floor((Math.random * startReactor.memoryMaxCombination) + 1)
+      newCombination.push(position-1)
     }
     return newCombination
 
@@ -234,9 +234,9 @@ startReactor = {
     }, 600 * startReactor.computerCombinationPosition)
   },
 
-  isTheRightCombination(postition) {
+  isTheRightCombination(position) {
     
-    let computerCombination = startReactor.computerCombination.slice(0, postition)
+    let computerCombination = startReactor.computerCombination.slice(0, position)
     return ( computerCombination.toString() == startReactor.playerCombination.toString())
   }
 }
