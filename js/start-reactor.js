@@ -2,7 +2,7 @@ startReactor = {
 
   computerCombination: [],
   playerCombination: [],
-  computerCombinationPostition: 1,
+  computerCombinationPosition: 1,
   combinationMaxPosition: 5,
   memoryMaxCombination: 9,
 
@@ -63,7 +63,7 @@ startReactor = {
 
     playItem(index, combinationPosition, location = 'computer') {
 
-      const leds = (location = 'computer') ? startReactor.interface.computerLedPanel : startReactor.interface.playerLedPanel
+      const leds = (location == 'computer') ? startReactor.interface.computerLedPanel : startReactor.interface.playerLedPanel
       const memPanel = startReactor.interface.memoryPanel.children[index]
 
       memPanel.classList.add("memoryActive")
@@ -160,7 +160,7 @@ startReactor = {
   start() { 
 
     startReactor.computerCombination = startReactor.createCombination()
-    startReactor.computerCombinationPostition = 1
+    startReactor.computerCombinationPosition = 1
     startReactor.playerCombination = []
     startReactor.interface.start().then(() => {
       setTimeout(() => {
@@ -196,8 +196,8 @@ startReactor = {
         return
       }
 
-      if (startReactor.playerCombination.length == startReactor.computerCombinationPostition) {
-        startReactor.computerCombinationPostition++
+      if (startReactor.playerCombination.length == startReactor.computerCombinationPosition) {
+        startReactor.computerCombinationPosition++
         setTimeout(() => {
           startReactor.playCombination()
         }, 1200)
@@ -222,7 +222,7 @@ startReactor = {
     startReactor.interface.disableButtons()
     startReactor.interface.turnAllLedsOff()
 
-    for (let i = 0; i <= startReactor.computerCombinationPostition - 1; i++) {
+    for (let i = 0; i <= startReactor.computerCombinationPosition - 1; i++) {
       setTimeout(() => {
         startReactor.interface.playItem(startReactor.playerCombination[i], i)
       }, 400 * (i+1))
@@ -231,7 +231,7 @@ startReactor = {
     setTimeout(() => {
       startReactor.interface.turnAllLedsOff()
       startReactor.interface.enableButtons()
-    }, 600 * startReactor.computerCombinationPostition)
+    }, 600 * startReactor.computerCombinationPosition)
   },
 
   isTheRightCombination(postition) {
